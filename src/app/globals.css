@@ -9,6 +9,7 @@
   --color-accent-hover: #b5d943;
 
   --color-border: #e8eae5;
+  --color-error: #b42318;
 
   --font-bebas: var(--font-bebas);
   --font-oswald: var(--font-oswald);
@@ -80,6 +81,8 @@
   --radius-full: 999px;
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
+
+  --section-spacing: 200px;
 }
 
 * {
@@ -253,4 +256,8 @@ ol {
   margin-inline: auto;
   padding-inline: var(--container-padding);
   box-sizing: border-box;
+}
+
+main > *:nth-child(n + 3) {
+  margin-top: var(--section-spacing);
 }
