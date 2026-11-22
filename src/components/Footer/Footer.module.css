@@ -1,0 +1,124 @@
+.footer {
+  width: 100%;
+  min-height: 579px;
+  background-color: var(--color-border);
+  color: var(--color-black);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  max-width: 1920px;
+  min-height: 579px;
+  margin-inline: auto;
+  padding: 60px 160px;
+  box-sizing: border-box;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left {
+  gap: 86px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 86px;
+  width: max-content;
+  min-width: 250px;
+  flex-shrink: 0;
+}
+
+.specialty {
+  margin: 0;
+  white-space: nowrap;
+
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black);
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 16px;
+}
+
+.navLink,
+.contactLink {
+  color: var(--color-black);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover,
+.contactLink:hover {
+  color: var(--color-accent);
+}
+
+.contactLink {
+  font-family: var(--font-oswald), sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 100%;
+  text-align: right;
+}
+
+.contactLink span {
+  font-size: 20px;
+  transition: transform var(--transition-fast);
+}
+
+.contactLink:active {
+  color: var(--color-accent-hover);
+}
+
+.copyright {
+  margin-top: -26px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
