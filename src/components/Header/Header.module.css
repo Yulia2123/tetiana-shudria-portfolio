@@ -86,7 +86,7 @@
 }
 
 .language {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 3px;
   flex-shrink: 0;

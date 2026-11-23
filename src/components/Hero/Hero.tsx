@@ -41,7 +41,7 @@ export default function Hero() {
 
         <div className={css.imageWrapper}>
           <Image
-            src="/images/hero.png"
+            src="https://res.cloudinary.com/dprfmsunw/image/upload/f_auto,q_auto/hero_sk5jbk.png"
             alt="Tetiana Shudria"
             width={385}
             height={505}
