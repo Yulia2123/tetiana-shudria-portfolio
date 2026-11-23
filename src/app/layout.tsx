@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald, Bebas_Neue, Manrope } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas",
@@ -36,6 +37,25 @@ export default function RootLayout({
         className={`${bebasNeue.variable} ${oswald.variable} ${manrope.variable}`}
       >
         {children}
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: "#171917",
+              color: "#ffffff",
+              borderRadius: "12px",
+              padding: "16px 24px",
+              fontFamily: "var(--font-manrope)",
+            },
+            success: {
+              iconTheme: {
+                primary: "#d5f45b",
+                secondary: "#171917",
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

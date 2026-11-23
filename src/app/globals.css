@@ -93,7 +93,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 116px;
 }
 
 body {
@@ -260,4 +260,8 @@ ol {
 
 main > *:nth-child(n + 3) {
   margin-top: var(--section-spacing);
+}
+
+main {
+  padding-top: 116px;
 }

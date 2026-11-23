@@ -9,9 +9,10 @@ export default function Hero() {
         <div className={css.content}>
           <h1 className={css.name}>TETIANA SHUDRIA</h1>
 
-          <div className={css.positionBackground} aria-hidden="true" />
-
-          <h2 className={css.position}>UI/UX DESIGNER</h2>
+          <div className={css.positionWrapper}>
+            <div className={css.positionBackground} aria-hidden="true" />
+            <h2 className={css.position}>UI/UX DESIGNER</h2>
+          </div>
 
           <p className={css.description}>
             Створюю дизайн сайтів, вебінтерфейсів і мобільних застосунків.
