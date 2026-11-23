@@ -61,26 +61,40 @@
 }
 
 .position {
-  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+
+  margin-top: 0;
+
   font-family: var(--font-oswald), sans-serif;
   font-weight: 700;
   font-size: 60px;
   line-height: 80%;
   color: var(--color-black);
+  white-space: nowrap;
+}
+
+.positionWrapper {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  margin-top: 16px;
 }
 
 .positionBackground {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 
-  top: 270px;
-  left: 20;
+  top: calc(50% + 12px);
+  left: 20px;
+  right: -20px;
 
-  width: 400px;
   height: 53px;
 
   background-color: var(--color-accent);
   border-radius: 4px;
+
+  transform: translateY(-50%);
 }
 
 .description {
@@ -169,6 +183,12 @@
   background-color: var(--color-accent-hover);
 }
 
+@media (max-width: 1600px) and (min-width: 1201px) {
+  .name {
+    font-size: clamp(170px, 14vw, 224px);
+  }
+}
+
 @media (max-width: 1200px) {
   .hero {
     height: 800px;
@@ -179,7 +199,7 @@
   }
 
   .name {
-    font-size: 220px;
+    font-size: clamp(120px, 14vw, 168px);
   }
 
   .position {
@@ -187,9 +207,6 @@
   }
 
   .positionBackground {
-    top: 205px;
-    left: 10px;
-    width: 340px;
     height: 48px;
   }
 
@@ -232,20 +249,22 @@
   }
 
   .name {
-    font-size: clamp(100px, 18vw, 160px);
+    font-size: clamp(72px, 15vw, 140px);
     white-space: normal;
   }
 
-  .position {
+  .positionWrapper {
     margin-top: 20px;
+  }
+
+  .position {
     font-size: 42px;
   }
 
   .positionBackground {
-    top: 145px;
-    left: 0;
-    width: 290px;
     height: 42px;
+    left: 12px;
+    right: -12px;
   }
 
   .description {

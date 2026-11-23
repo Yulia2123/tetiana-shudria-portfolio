@@ -2,6 +2,7 @@
 
 import { useState, type FocusEvent, type FormEvent } from "react";
 import css from "./Contacts.module.css";
+import toast from "react-hot-toast";
 
 const projectOptions = [
   { value: "website", label: "Лендинг" },
@@ -17,6 +18,7 @@ export default function Contacts() {
     name: "",
     phone: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const isContactInfoFilled =
     formValues.name.trim() !== "" && formValues.phone.trim() !== "";
@@ -32,9 +34,11 @@ export default function Contacts() {
   });
 
   const validateField = (name: FieldName, value: string) => {
-    if (!value.trim()) return true;
+    if (name === "name" || name === "phone") {
+      return !value.trim();
+    }
 
-    if (name === "email") {
+    if (name === "email" && value.trim()) {
       return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
     }
 
@@ -54,25 +58,78 @@ export default function Contacts() {
     }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const data = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const data = new FormData(formElement);
 
     const nextErrors: Record<FieldName, boolean> = {
       name: validateField("name", String(data.get("name") ?? "")),
       phone: validateField("phone", String(data.get("phone") ?? "")),
       email: validateField("email", String(data.get("email") ?? "")),
-      project: validateField("project", String(data.get("project") ?? "")),
-      message: validateField("message", String(data.get("message") ?? "")),
+      project: false,
+      message: false,
     };
 
     setErrors(nextErrors);
+    if (Object.values(nextErrors).some(Boolean)) {
+      return;
+    }
 
-    if (Object.values(nextErrors).some(Boolean)) return;
+    setIsSubmitting(true);
 
-    // resent
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.get("name"),
+          phone: data.get("phone"),
+          email: data.get("email"),
+          project: data.get("project"),
+          message: data.get("message"),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Не вдалося надіслати заявку.");
+      }
+
+      toast.success("Заявку успішно надіслано!");
+
+      formElement.reset();
+
+      setFormValues({
+        name: "",
+        phone: "",
+      });
+
+      setProjectValue("");
+      setProjectOpen(false);
+
+      setErrors({
+        name: false,
+        phone: false,
+        email: false,
+        project: false,
+        message: false,
+      });
+    } catch (error) {
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Сталася помилка. Спробуйте ще раз."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return (
     <section className={css.contacts} id="contacts">
       <div className={css.container}>
@@ -160,7 +217,8 @@ export default function Contacts() {
               name="email"
               type="email"
               placeholder="example@email.com"
-              required
+              onBlur={handleBlur}
+              aria-invalid={errors.email}
             />
           </div>
 
@@ -216,11 +274,14 @@ export default function Contacts() {
               name="message"
               placeholder="Розкажіть про проєкт..."
               rows={3}
-              required
             />
           </div>
 
-          <button className={css.submitButton} type="submit">
+          <button
+            className={css.submitButton}
+            type="submit"
+            disabled={isSubmitting}
+          >
             НАДІСЛАТИ
           </button>
         </form>
