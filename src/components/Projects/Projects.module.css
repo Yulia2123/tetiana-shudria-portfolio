@@ -147,8 +147,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 21px;
+  margin-top: 8px;
 }
 
 .tag {
@@ -188,6 +188,11 @@
 
 .caseButton:hover {
   background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.caseButton:active {
+  background-color: var(--color-accent-hover);
   transform: translateY(-2px);
 }
 

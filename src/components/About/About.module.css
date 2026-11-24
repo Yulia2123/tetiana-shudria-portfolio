@@ -1,0 +1,144 @@
+.about {
+  width: 100%;
+  min-height: 874px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 100px var(--container-padding);
+
+  display: grid;
+  grid-template-columns: 655px 634px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 156px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 674px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.content {
+  width: 100%;
+  max-width: 634px;
+}
+
+.title {
+  margin: 0 0 60px;
+
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 100%;
+
+  color: var(--color-black);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.description p {
+  margin: 0;
+
+  font-family: var(--font-manrope), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+
+  color: var(--color-black);
+}
+
+.skillsTitle {
+  margin: 15px 0 15px;
+
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 133%;
+
+  color: var(--color-black);
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 60px;
+  }
+
+  .imageWrapper {
+    height: auto;
+    aspect-ratio: 655 / 674;
+  }
+
+  .title {
+    font-size: clamp(56px, 5.3vw, 80px);
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    min-height: auto;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    max-width: 655px;
+    aspect-ratio: 655 / 674;
+  }
+
+  .content {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    gap: 32px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+    font-size: 56px;
+  }
+
+  .description {
+    gap: 18px;
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .skillsTitle {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+}
