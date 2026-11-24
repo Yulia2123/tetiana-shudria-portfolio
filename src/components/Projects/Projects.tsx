@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import css from "./Projects.module.css";
+import Link from "next/link";
 
 const projects = [
   {
@@ -17,33 +18,37 @@ const projects = [
     description:
       "Дизайн сайту для косметолога з акцентом на естетику, довіру та індивідуальний підхід.",
     tags: ["Website Design", "Landing Page", "Client Project"],
-    caseUrl: "/projects/vona",
+    caseUrl:
+      "https://www.behance.net/gallery/231494205/VONA-Website-design-for-cosmetologist",
   },
   {
     slug: "velika-krucha",
     title: "Готель «Велика Круча»",
     images: [
-      "/images/projects/velika-krucha.jpg",
-      "/images/projects/velika-krucha-2.jpg",
-      "/images/projects/velika-krucha-3.jpg",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Project_Cover_1_s1fo9g.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_6_1_eznwga.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_7_1_edi8jc.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_8_djncfq.png",
     ],
     description:
       "Оновлення сайту для створення сучасного та зручного інтерфейсу, що підкреслює унікальність комплексу, його історичну й культурну цінність та відкриває нові можливості для взаємодії з аудиторією.",
     tags: ["Website Design", "Landing Page", "Redesign", "Study case"],
-    caseUrl: "/projects/velika-krucha",
+    caseUrl: "https://www.behance.net/gallery/217497139/Velyka-Krucha",
   },
   {
     slug: "pyriatyn",
     title: "Готель «Пирятин»",
     images: [
-      "/images/projects/pyriatyn.jpg",
-      "/images/projects/pyriatyn-2.jpg",
-      "/images/projects/pyriatyn-3.jpg",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Project_Cover_2_zgmeqg.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_9_vj80b4.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_10_npdekn.png",
+      "https://res.cloudinary.com/dprfmsunw/image/upload/f_auto/q_auto/Rectangle_11_xfbbuv.png",
     ],
     description:
       "Редизайн сайту готелю «Пирятин» — проєкт зі створення сучасного та зручного вебінтерфейсу, який поєднує елегантну естетику, атмосферу затишку та просту навігацію.",
     tags: ["Website Design", "Landing Page", "Redesign", "Study case"],
-    caseUrl: "/projects/pyriatyn",
+    caseUrl:
+      "https://www.behance.net/gallery/256096045/Hotel-Pyryatyn-Landing-Page",
   },
 ];
 
@@ -238,12 +243,17 @@ export default function Projects() {
                 </div>
               </div>
 
-              <a href={activeProject.caseUrl} className={css.caseButton}>
+              <Link
+                href={activeProject.caseUrl}
+                className={css.caseButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>ПЕРЕГЛЯНУТИ КЕЙС</span>
                 <span className={css.caseArrow} aria-hidden="true">
                   →
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
 
