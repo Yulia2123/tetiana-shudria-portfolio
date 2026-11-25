@@ -24,14 +24,44 @@ export default function Hero() {
             <Link href="#contacts" className={css.primaryButton}>
               <span>ОБГОВОРИТИ ПРОЄКТ</span>
               <span className={css.arrow} aria-hidden="true">
-                →
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 12H20M13 19L20 12L13 5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </span>
             </Link>
 
             <Link href="#services" className={css.secondaryButton}>
               <span>ПЕРЕГЛЯНУТИ ПОСЛУГИ</span>
               <span className={css.arrow} aria-hidden="true">
-                →
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 12H20M13 19L20 12L13 5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </span>
             </Link>
           </div>

@@ -55,27 +55,23 @@
   width: 48px;
   height: 36px;
 
+  padding: 0;
   border: none;
   background: transparent;
 
-  font-size: 30px;
-  line-height: 1;
   color: var(--color-black);
-
   cursor: pointer;
-  transition: color var(--transition-fast), transform var(--transition-fast);
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navButton svg {
+  display: block;
+  transition: stroke 0.3s ease;
 }
 
 .navButton:hover {
-  color: var(--color-text-secondary);
-}
-
-.navButton:first-child:hover {
-  transform: translateX(-4px);
-}
-
-.navButton:last-child:hover {
-  transform: translateX(4px);
+  color: var(--color-accent);
 }
 
 .gallery {
@@ -261,8 +257,8 @@
 }
 
 .previewTitle {
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 16px;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 24px;
   font-weight: 500;
   line-height: 120%;
   color: var(--color-black);
@@ -270,7 +266,7 @@
 
 .previewCategory {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 120%;
   color: var(--color-text-secondary);
   white-space: nowrap;
