@@ -54,7 +54,24 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 {item.label}
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4 12H20M13 19L20 12L13 5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </a>
             ))}
           </div>

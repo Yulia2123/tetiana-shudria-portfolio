@@ -127,7 +127,20 @@ export default function Projects() {
             onClick={previousProject}
             aria-label="Попередній проєкт"
           >
-            ←
+            <svg
+              width="117"
+              height="22"
+              viewBox="0 0 117 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.3457 21L1.3457 11L10.3457 1M1.3457 11H115.846"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke="currentColor"
+              />
+            </svg>
           </button>
 
           <button
@@ -136,7 +149,20 @@ export default function Projects() {
             onClick={nextProject}
             aria-label="Наступний проєкт"
           >
-            →
+            <svg
+              width="117"
+              height="22"
+              viewBox="0 0 117 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M106.5 1L115.5 11L106.5 21M115.5 11L1 11"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke="currentColor"
+              />
+            </svg>
           </button>
         </div>
 
@@ -250,9 +276,22 @@ export default function Projects() {
                 rel="noopener noreferrer"
               >
                 <span>ПЕРЕГЛЯНУТИ КЕЙС</span>
-                <span className={css.caseArrow} aria-hidden="true">
-                  →
-                </span>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 12H20M13 19L20 12L13 5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </Link>
             </div>
           </div>
