@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 1338px;
   box-sizing: border-box;
-  background-color: var(--color-background);
+  background-color: #f0f2ed;
   display: flex;
   align-items: center;
 }
