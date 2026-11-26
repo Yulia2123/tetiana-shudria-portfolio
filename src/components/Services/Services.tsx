@@ -88,10 +88,7 @@ export default function Services() {
 
   const handleServiceClick = (index: number) => {
     setActiveIndex(index);
-
-    if (window.matchMedia("(max-width: 390px)").matches) {
-      setRevealedCount((current) => Math.max(current, index + 1));
-    }
+    setRevealedCount((current) => Math.max(current, index + 1));
   };
 
   return (
@@ -111,7 +108,6 @@ export default function Services() {
             {services.map((service, index) => {
               const isActive = activeIndex === index;
               const isRevealed = index < revealedCount;
-              const isMobile = window.matchMedia("(max-width: 390px)").matches;
 
               return (
                 <div className={css.serviceCard} key={service.title}>
