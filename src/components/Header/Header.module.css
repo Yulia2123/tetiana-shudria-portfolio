@@ -211,3 +211,51 @@
     padding-inline: 6px;
   }
 }
+
+.menuButton {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .header {
+    height: 80px;
+  }
+
+  .container {
+    height: 80px;
+    min-height: 80px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 54px;
+    height: 40px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    flex-shrink: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menuButton svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}

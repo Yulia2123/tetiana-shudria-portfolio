@@ -65,8 +65,21 @@ export default function Header() {
           aria-label={menuOpen ? "Закрити меню" : "Відкрити меню"}
           aria-expanded={menuOpen}
         >
-          <span />
-          <span />
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 9H35.9333M5 20.25H35.9333M5 31.7H35.9333"
+              stroke="#171A17"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
       </div>
     </header>

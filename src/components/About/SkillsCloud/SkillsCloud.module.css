@@ -74,3 +74,20 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 390px) {
+  .cloud {
+    width: 340px;
+    height: 184px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .skill {
+    min-height: 24px;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 120%;
+    border-radius: 8px;
+  }
+}

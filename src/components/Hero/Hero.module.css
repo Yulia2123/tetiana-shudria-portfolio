@@ -294,3 +294,106 @@
     bottom: 10px;
   }
 }
+
+@media (max-width: 390px) {
+  .hero {
+    width: 100%;
+    height: 1026px;
+    min-height: 1026px;
+  }
+
+  .container {
+    height: 100%;
+    padding: 60px 20px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    margin: 0;
+    font-size: 100px;
+    line-height: 80%;
+    white-space: normal;
+  }
+
+  .name span:first-child {
+    align-self: flex-start;
+  }
+
+  .name span:last-child {
+    align-self: flex-end;
+  }
+
+  .positionWrapper {
+    width: max-content;
+    margin-top: 8px;
+  }
+
+  .position {
+    font-size: 32px;
+    line-height: 100%;
+  }
+
+  .positionBackground {
+    width: 215px;
+    height: 30px;
+    top: 50%;
+    left: 8px;
+    right: auto;
+    transform: translateY(-50%);
+    border-radius: 2px;
+  }
+
+  .description {
+    max-width: 100%;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .buttons {
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 350px;
+    height: 56px;
+    min-height: 56px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    font-size: 20px;
+    line-height: 120%;
+    gap: 8px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .imageWrapper {
+    width: 253px;
+    height: 334px;
+    left: 50%;
+    right: auto;
+    bottom: 60px;
+    transform: translateX(-50%);
+  }
+
+  .imageBackground {
+    width: 350px;
+    height: 268px;
+    left: 50%;
+    right: auto;
+    bottom: 90px;
+    transform: translateX(-50%);
+  }
+}

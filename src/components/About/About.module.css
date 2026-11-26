@@ -26,6 +26,9 @@
   height: 674px;
   overflow: hidden;
   border-radius: 4px;
+
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .photo {
@@ -36,6 +39,9 @@
 .content {
   width: 100%;
   max-width: 634px;
+
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .title {
@@ -140,5 +146,56 @@
   .skillsTitle {
     font-size: 22px;
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 390px) {
+  .about {
+    min-height: 1080px;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 40px 11px 0;
+  }
+
+  .content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 368px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin: 0 0 24px;
+    line-height: 100%;
+  }
+
+  .description {
+    gap: 18px;
+  }
+
+  .description p {
+    font-size: 12px;
+    line-height: 140%;
+  }
+
+  .skillsTitle {
+    font-size: 18px;
+    margin: 22px 0 15px;
+  }
+
+  .imageWrapper {
+    order: 2;
+    width: 350px;
+    height: 362px;
+    aspect-ratio: auto;
+    max-width: 100%;
   }
 }

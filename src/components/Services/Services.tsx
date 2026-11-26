@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import css from "./Services.module.css";
 
@@ -40,8 +40,56 @@ const services = [
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [revealedCount, setRevealedCount] = useState(1);
+
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const activeService = services[activeIndex];
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 390px)");
+
+    let observer: IntersectionObserver | null = null;
+
+    const observeServices = () => {
+      observer?.disconnect();
+
+      if (!mobileQuery.matches) return;
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const index = Number(entry.target.getAttribute("data-index"));
+
+            setRevealedCount((current) => Math.max(current, index + 1));
+          });
+        },
+        {
+          rootMargin: "-15% 0px -25% 0px",
+          threshold: 0,
+        }
+      );
+
+      itemRefs.current.forEach((item) => {
+        if (item) observer?.observe(item);
+      });
+    };
+
+    observeServices();
+    mobileQuery.addEventListener("change", observeServices);
+
+    return () => {
+      observer?.disconnect();
+      mobileQuery.removeEventListener("change", observeServices);
+    };
+  }, []);
+
+  const handleServiceClick = (index: number) => {
+    setActiveIndex(index);
+    setRevealedCount((current) => Math.max(current, index + 1));
+  };
 
   return (
     <section className={css.services} id="services">
@@ -59,51 +107,48 @@ export default function Services() {
           <div className={css.serviceList}>
             {services.map((service, index) => {
               const isActive = activeIndex === index;
+              const isRevealed = index < revealedCount;
 
               return (
-                <button
-                  key={service.title}
-                  type="button"
-                  className={`${css.serviceItem} ${
-                    isActive ? css.serviceItemActive : ""
-                  }`}
-                  onClick={() => setActiveIndex(index)}
-                  aria-pressed={isActive}
-                >
-                  <span className={css.indicator} aria-hidden="true" />
+                <div className={css.serviceCard} key={service.title}>
+                  <button
+                    ref={(element) => {
+                      itemRefs.current[index] = element;
+                    }}
+                    data-index={index}
+                    type="button"
+                    className={`${css.serviceItem} ${
+                      isActive ? css.serviceItemActive : ""
+                    } ${isRevealed ? css.serviceItemRevealed : ""}`}
+                    onClick={() => handleServiceClick(index)}
+                    aria-pressed={isActive}
+                  >
+                    <span className={css.indicator} aria-hidden="true" />
 
-                  <span className={css.serviceText}>
-                    <span className={css.serviceTitle}>{service.title}</span>
+                    <span className={css.serviceText}>
+                      <span className={css.serviceTitle}>{service.title}</span>
 
-                    <span className={css.serviceDescription}>
-                      {service.description}
+                      <span className={css.serviceDescription}>
+                        {service.description}
+                      </span>
                     </span>
-                  </span>
-                </button>
+                  </button>
+
+                  {isRevealed && (
+                    <div className={css.mobileImageWrapper}>
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt}
+                        fill
+                        sizes="(max-width: 390px) 350px, 0px"
+                        className={css.serviceImage}
+                      />
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
-
-          <a href="#contacts" className={css.contactButton}>
-            <span>ОБГОВОРИТИ ПРОЄКТ</span>
-
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 12H20M13 19L20 12L13 5"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
         </div>
 
         <div className={css.imageWrapper}>
@@ -117,6 +162,27 @@ export default function Services() {
             priority={activeIndex === 0}
           />
         </div>
+
+        <a href="#contacts" className={css.contactButton}>
+          <span>ОБГОВОРИТИ ПРОЄКТ</span>
+
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 12H20M13 19L20 12L13 5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
       </div>
     </section>
   );
