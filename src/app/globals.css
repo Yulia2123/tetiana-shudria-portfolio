@@ -265,3 +265,22 @@ main > *:nth-child(n + 3) {
 main {
   padding-top: 116px;
 }
+
+@media (max-width: 390px) {
+  main > *:nth-child(n + 3) {
+    margin-top: 0;
+  }
+  :root {
+    --container-padding: 20px;
+    --section-spacing: 60px;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

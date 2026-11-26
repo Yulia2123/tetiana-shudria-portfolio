@@ -134,23 +134,32 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
       const spawned = items.map(() => false);
 
       const wall = 100;
+      const margin = 10;
 
       const walls = [
         Matter.Bodies.rectangle(
           width / 2,
-          height + wall / 2,
+          height + wall / 2 - margin,
           width + wall * 2,
           wall,
           { isStatic: true }
         ),
 
-        Matter.Bodies.rectangle(width / 2, -wall / 2, width + wall * 2, wall, {
-          isStatic: true,
-        }),
+        Matter.Bodies.rectangle(
+          width / 2,
+          -wall / 2 + margin,
+          width + wall * 2,
+          wall,
+          { isStatic: true }
+        ),
 
-        Matter.Bodies.rectangle(-wall / 2, height / 2, wall, height * 2, {
-          isStatic: true,
-        }),
+        Matter.Bodies.rectangle(
+          -wall / 2 + margin,
+          height / 2,
+          wall,
+          height + wall * 2,
+          { isStatic: true }
+        ),
       ];
 
       Matter.Composite.add(currentEngine.world, walls);
@@ -213,17 +222,16 @@ export default function SkillsCloud({ skills }: SkillsCloudProps) {
         Matter.Engine.update(currentEngine, delta);
 
         if (!rightWallAdded && spawned.every(Boolean)) {
-          const allEntered = bodies.every(
-            (body, index) =>
-              body.position.x + items[index].width / 2 <= width - 4
+          const allInside = bodies.every(
+            (body) => body.bounds.max.x <= width - margin
           );
 
-          if (allEntered) {
+          if (allInside) {
             const rightWall = Matter.Bodies.rectangle(
-              width + wall / 2,
+              width + wall / 2 - margin,
               height / 2,
               wall,
-              height * 2,
+              height + wall * 2,
               { isStatic: true }
             );
 

@@ -7,7 +7,10 @@ export default function Hero() {
     <section className={css.hero}>
       <div className={css.container}>
         <div className={css.content}>
-          <h1 className={css.name}>TETIANA SHUDRIA</h1>
+          <h1 className={css.name}>
+            <span>TETIANA</span>
+            <span>SHUDRIA</span>
+          </h1>
 
           <div className={css.positionWrapper}>
             <div className={css.positionBackground} aria-hidden="true" />
