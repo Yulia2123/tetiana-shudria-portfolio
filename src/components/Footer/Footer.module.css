@@ -122,3 +122,201 @@
   font-weight: 400;
   line-height: 20px;
 }
+
+@media (max-width: 900px) and (min-width: 601px) {
+  .footer {
+    min-height: 460px;
+  }
+
+  .container {
+    min-height: 460px;
+    padding: 50px 40px;
+  }
+
+  .left {
+    gap: 64px;
+  }
+
+  .right {
+    align-items: flex-end;
+    min-width: 0;
+    gap: 64px;
+  }
+
+  .specialty {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .name {
+    font-size: 38px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .contacts {
+    gap: 12px;
+  }
+
+  .navLink,
+  .contactLink {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .contactLink {
+    gap: 10px;
+  }
+
+  .contactLink span {
+    font-size: 16px;
+  }
+
+  .copyright {
+    margin-top: -18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    min-height: auto;
+  }
+
+  .container {
+    min-height: auto;
+    padding: 40px 20px;
+    gap: 40px;
+  }
+
+  .left {
+    gap: 28px;
+  }
+
+  .right {
+    min-width: 0;
+    gap: 32px;
+  }
+
+  .specialty {
+    white-space: normal;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .contacts {
+    gap: 12px;
+  }
+
+  .navLink,
+  .contactLink {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .contactLink {
+    gap: 8px;
+  }
+
+  .contactLink span {
+    font-size: 15px;
+  }
+
+  .copyright {
+    margin-top: -12px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 36px 16px;
+    gap: 32px;
+  }
+
+  .left {
+    gap: 24px;
+  }
+
+  .right {
+    gap: 28px;
+  }
+
+  .specialty {
+    font-size: 26px;
+  }
+
+  .name {
+    font-size: 33px;
+  }
+
+  .navLink,
+  .contactLink {
+    font-size: 14px;
+  }
+
+  .contactLink span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 340px) {
+  .container {
+    padding: 32px 12px;
+    gap: 28px;
+  }
+
+  .left {
+    gap: 20px;
+  }
+
+  .right {
+    gap: 24px;
+  }
+
+  .specialty {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .contacts {
+    gap: 10px;
+  }
+
+  .navLink,
+  .contactLink {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .contactLink {
+    gap: 6px;
+  }
+
+  .contactLink span {
+    font-size: 12px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}

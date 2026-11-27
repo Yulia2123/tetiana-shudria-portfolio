@@ -162,6 +162,10 @@
   transform: translate(3px, -3px);
 }
 
+.menuButton {
+  display: none;
+}
+
 @media (max-width: 1200px) {
   .container {
     gap: 16px;
@@ -212,16 +216,11 @@
   }
 }
 
-.menuButton {
-  display: none;
-}
-
 @media (max-width: 390px) {
-  .header {
-    height: 80px;
-  }
-
   .container {
+    position: relative;
+    z-index: 1002;
+
     height: 80px;
     min-height: 80px;
     padding: 20px;
@@ -229,14 +228,11 @@
   }
 
   .logo {
-    width: 54px;
-    height: 40px;
+    width: 80px;
+    height: 68px;
   }
 
-  .nav {
-    display: none;
-  }
-
+  .nav,
   .actions {
     display: none;
   }
@@ -255,7 +251,199 @@
 
   .menuButton svg {
     display: block;
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobileMenu {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-height: 100dvh;
+    padding: 120px 20px 40px;
+
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    overflow-y: auto;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .mobileNavLink {
+    color: var(--color-black);
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    transition: color var(--transition-fast);
+  }
+
+  .mobileNavLink:hover {
+    color: var(--color-accent);
+  }
+
+  .mobileButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .mobileButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 258px;
+    min-height: 48px;
+    padding: 12px 18px;
+
+    box-sizing: border-box;
+    border: 1px solid var(--color-accent);
+    border-radius: 16px;
+
+    background-color: var(--color-accent);
+    color: var(--color-black);
+
+    font-family: var(--font-oswald), sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: center;
+    white-space: nowrap;
+
+    transition: background-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .mobileButton svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  .mobileButton:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .mobileButtonSecondary {
+    background-color: transparent;
+    color: var(--color-black);
+    border: 1px solid var(--color-text-secondary);
+  }
+
+  .mobileButtonSecondary:hover {
+    border-color: var(--color-black);
+  }
+
+  .mobileButtonSecondary:active {
+    background-color: transparent;
+    border-color: var(--color-accent-hover);
+    color: var(--color-accent-hover);
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    margin-top: 60px;
+  }
+
+  .socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
+  }
+
+  .socials img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    height: 72px;
+    min-height: 72px;
+    padding: 16px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 68px;
+  }
+
+  .menuButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menuButton svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .mobileNavLink {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    height: 64px;
+    min-height: 64px;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 54px;
+    height: 40px;
+  }
+
+  .menuButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menuButton svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobileMenu {
+    padding-inline: 12px;
+    padding-top: 100px;
+  }
+
+  .mobileNavLink {
+    font-size: 22px;
+  }
+
+  .mobileButton {
+    width: 100%;
+    max-width: 258px;
   }
 }

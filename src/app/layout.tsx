@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Oswald, Bebas_Neue, Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import Header from "@/components/Header/Header";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-bebas",
@@ -36,7 +37,9 @@ export default function RootLayout({
       <body
         className={`${bebasNeue.variable} ${oswald.variable} ${manrope.variable}`}
       >
+        <Header />
         {children}
+
         <Toaster
           position="top-right"
           toastOptions={{
