@@ -233,65 +233,128 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .hero {
-    height: auto;
-    min-height: 850px;
+    height: 800px;
   }
 
   .container {
-    padding: 60px 40px 420px;
+    padding: 70px 60px;
   }
 
   .name {
-    font-size: clamp(72px, 15vw, 140px);
-    white-space: normal;
-  }
-
-  .positionWrapper {
-    margin-top: 20px;
+    font-size: clamp(120px, 14vw, 168px);
   }
 
   .position {
-    font-size: 42px;
+    font-size: 48px;
   }
 
   .positionBackground {
-    height: 42px;
-    left: 12px;
-    right: -12px;
+    height: 48px;
+  }
+
+  .imageWrapper {
+    width: 320px;
+    height: 420px;
+    left: auto;
+    right: 70px;
+    bottom: 150px;
+  }
+
+  .imageBackground {
+    width: 420px;
+    height: 330px;
+    left: auto;
+    right: 30px;
+    bottom: 115px;
   }
 
   .description {
-    max-width: 100%;
-    margin-top: 24px;
-  }
-
-  .buttons {
-    margin-top: 30px;
+    max-width: 55%;
   }
 
   .primaryButton,
   .secondaryButton {
-    width: min(100%, 340px);
-    height: 60px;
-    font-size: 19px;
+    width: 340px;
+    height: 65px;
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 391px) {
+  .hero {
+    height: 700px;
+    min-height: 700px;
+  }
+
+  .container {
+    padding: 55px 32px;
+  }
+
+  .content {
+    max-width: 62%;
+  }
+
+  .name {
+    font-size: clamp(76px, 12vw, 108px);
+    white-space: normal;
+  }
+
+  .positionWrapper {
+    margin-top: 14px;
+  }
+
+  .position {
+    font-size: clamp(30px, 5vw, 40px);
+  }
+
+  .positionBackground {
+    height: 36px;
+    left: 10px;
+    right: -10px;
+  }
+
+  .description {
+    max-width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: min(100%, 280px);
+    height: 52px;
+    padding-inline: 16px;
+    font-size: 16px;
+  }
+
+  .arrow svg {
+    width: 20px;
+    height: 20px;
   }
 
   .imageWrapper {
-    width: 260px;
-    height: 340px;
+    width: clamp(180px, 28vw, 250px);
+    height: auto;
+    aspect-ratio: 385 / 505;
     left: auto;
-    right: 50px;
-    bottom: 30px;
+    right: 32px;
+    bottom: 45px;
   }
 
   .imageBackground {
-    width: 320px;
-    height: 250px;
+    width: clamp(220px, 35vw, 300px);
+    height: auto;
+    aspect-ratio: 524 / 405;
     left: auto;
-    right: 20px;
-    bottom: 10px;
+    right: 12px;
+    bottom: 25px;
   }
 }
 
@@ -300,6 +363,8 @@
     width: 100%;
     height: 1026px;
     min-height: 1026px;
+    padding-top: 80px;
+    box-sizing: border-box;
   }
 
   .container {
@@ -312,9 +377,8 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-
     margin: 0;
-    font-size: 100px;
+    font-size: clamp(76px, 25.64vw, 100px);
     line-height: 80%;
     white-space: normal;
   }
@@ -333,12 +397,12 @@
   }
 
   .position {
-    font-size: 32px;
+    font-size: clamp(27px, 8.2vw, 32px);
     line-height: 100%;
   }
 
   .positionBackground {
-    width: 215px;
+    width: clamp(180px, 55.13vw, 215px);
     height: 30px;
     top: 50%;
     left: 8px;
@@ -367,21 +431,23 @@
     max-width: 350px;
     height: 56px;
     min-height: 56px;
-    padding: 16px 20px;
+    padding: 16px 12px;
     box-sizing: border-box;
     border-radius: 16px;
-    font-size: 20px;
+    font-size: clamp(15px, 5.13vw, 20px);
     line-height: 120%;
     gap: 8px;
   }
 
-  .arrow {
-    font-size: 20px;
+  .arrow svg {
+    width: 20px;
+    height: 20px;
   }
 
   .imageWrapper {
-    width: 253px;
-    height: 334px;
+    width: min(65%, 253px);
+    height: auto;
+    aspect-ratio: 385 / 505;
     left: 50%;
     right: auto;
     bottom: 60px;
@@ -389,8 +455,9 @@
   }
 
   .imageBackground {
-    width: 350px;
-    height: 268px;
+    width: min(90%, 350px);
+    height: auto;
+    aspect-ratio: 524 / 405;
     left: 50%;
     right: auto;
     bottom: 90px;

@@ -99,39 +99,73 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 601px) {
   .about {
     min-height: auto;
   }
 
   .container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+    padding: 70px 32px;
   }
 
   .imageWrapper {
     width: 100%;
-    max-width: 655px;
+    height: auto;
     aspect-ratio: 655 / 674;
   }
 
   .content {
-    max-width: 760px;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    gap: 32px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    max-width: 100%;
   }
 
   .title {
     margin-bottom: 32px;
-    font-size: 56px;
+    font-size: clamp(38px, 5.5vw, 52px);
+  }
+
+  .description {
+    gap: 16px;
+  }
+
+  .description p {
+    font-size: 13px;
+    line-height: 140%;
+  }
+
+  .skillsTitle {
+    margin: 16px 0 12px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    min-height: auto;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 60px 20px;
+  }
+
+  .content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .title {
+    margin: 0 0 28px;
+    font-size: 40px;
+    line-height: 100%;
   }
 
   .description {
@@ -139,13 +173,21 @@
   }
 
   .description p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 140%;
   }
 
   .skillsTitle {
-    font-size: 22px;
-    margin-top: 20px;
+    margin: 20px 0 14px;
+    font-size: 20px;
+  }
+
+  .imageWrapper {
+    order: 2;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 350 / 362;
   }
 }
 
@@ -197,5 +239,65 @@
     height: 362px;
     aspect-ratio: auto;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    gap: 30px;
+    padding: 52px 16px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .description {
+    gap: 16px;
+  }
+
+  .description p {
+    font-size: 13px;
+  }
+
+  .skillsTitle {
+    margin: 18px 0 12px;
+    font-size: 19px;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+    aspect-ratio: 343 / 354;
+  }
+}
+
+@media (max-width: 340px) {
+  .container {
+    gap: 24px;
+    padding: 44px 12px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  .description {
+    gap: 14px;
+  }
+
+  .description p {
+    font-size: 12px;
+    line-height: 145%;
+  }
+
+  .skillsTitle {
+    margin: 16px 0 10px;
+    font-size: 17px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 296 / 306;
   }
 }

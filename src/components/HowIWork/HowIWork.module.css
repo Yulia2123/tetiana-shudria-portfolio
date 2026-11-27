@@ -141,70 +141,69 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) and (min-width: 601px) {
+  .howIWork {
+    height: auto;
+    min-height: auto;
+  }
+
+  .container {
+    height: auto;
+    padding: 70px 32px;
+  }
+
   .title {
-    font-size: 60px;
+    font-size: 52px;
   }
 
   .description {
-    font-size: 16px;
+    max-width: 550px;
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 140%;
   }
 
   .steps {
-    column-gap: 24px;
-    row-gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 24px;
+    margin-top: 40px;
   }
 
   .step {
     height: auto;
-    min-height: 200px;
+    min-height: 190px;
+    padding: 20px 0 16px;
   }
 
-  .number,
-  .stepTitle {
+  .number {
+    width: 46px;
+    height: 56px;
     font-size: 30px;
   }
 
+  .stepTitle {
+    margin-top: 12px;
+    font-size: 28px;
+    line-height: 120%;
+  }
+
   .stepDescription {
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 140%;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding-inline: 24px;
-  }
-
-  .title {
-    font-size: 48px;
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
-    row-gap: 24px;
-    margin-top: 36px;
-  }
-
-  .step {
-    min-height: 160px;
-  }
-
-  .number,
-  .stepTitle {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 390px) {
   .howIWork {
-    width: 100%;
-    height: 924px;
-    min-height: 924px;
-    box-sizing: border-box;
+    height: auto;
+    min-height: auto;
   }
 
   .container {
-    height: 100%;
+    height: auto;
     padding: 60px 20px;
   }
 
@@ -214,8 +213,8 @@
   }
 
   .description {
-    max-width: 350px;
-    margin-top: 24px;
+    max-width: 100%;
+    margin-top: 20px;
     font-size: 14px;
     line-height: 140%;
   }
@@ -226,36 +225,29 @@
     gap: 0;
     margin-top: 32px;
   }
+
   .step {
     display: grid;
-    grid-template-columns: 56px minmax(0, 1fr);
+    grid-template-columns: 48px minmax(0, 1fr);
     grid-template-rows: auto 1fr;
-    column-gap: 16px;
+    column-gap: 14px;
     align-items: start;
 
     width: 100%;
-    height: 157px;
-    min-height: 157px;
+    height: auto;
+    min-height: 145px;
+    padding: 20px 4px;
     box-sizing: border-box;
-
-    padding: 24px 8px 0;
-    border-top: 1px solid var(--color-text-secondary);
   }
 
   .number {
     grid-column: 1;
     grid-row: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 56px;
-    height: 56px;
-    padding: 10px;
-    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
     border-radius: 4px;
-
-    font-size: 24px;
+    font-size: 22px;
     line-height: 100%;
   }
 
@@ -270,9 +262,90 @@
   .stepDescription {
     grid-column: 2;
     grid-row: 2;
-    max-width: 100%;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 52px 16px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .steps {
+    margin-top: 28px;
+  }
+
+  .step {
+    grid-template-columns: 44px minmax(0, 1fr);
+    column-gap: 12px;
+    min-height: 135px;
+    padding: 18px 2px;
+  }
+
+  .number {
+    width: 44px;
+    height: 44px;
+    font-size: 21px;
+  }
+
+  .stepTitle {
+    font-size: 22px;
+  }
+
+  .stepDescription {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 340px) {
+  .container {
+    padding: 44px 12px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+  .steps {
+    margin-top: 24px;
+  }
+
+  .step {
+    grid-template-columns: 38px minmax(0, 1fr);
+    column-gap: 10px;
+    min-height: 125px;
+    padding: 16px 0;
+  }
+
+  .number {
+    width: 38px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  .stepTitle {
+    font-size: 20px;
+  }
+
+  .stepDescription {
+    margin-top: 6px;
+    font-size: 11px;
     line-height: 140%;
   }
 }
